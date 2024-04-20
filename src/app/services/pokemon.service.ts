@@ -11,4 +11,10 @@ export class PokemonService {
   getAll(): Pokemon[] {
     return sample_Pokemon;
   }
+
+  getAllBySearchTerm(searchTerm: string): Pokemon[] {
+    return this.getAll().filter((pokemon) =>
+      pokemon.name.toLowerCase().includes(searchTerm.toLowerCase())
+    );
+  }
 }
