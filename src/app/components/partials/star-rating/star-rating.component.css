@@ -1,0 +1,11 @@
+.container {
+  display: flex;
+  flex-wrap: nowrap;
+  margin-top: 0.4rem;
+  width: 10rem;
+}
+
+img {
+  width: 1.8rem;
+  height: 1.4rem;
+}
