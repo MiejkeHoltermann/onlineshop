@@ -20,7 +20,10 @@ export class HomeComponent {
         this.pokemons = this.pokemonService.getAllBySearchTerm(
           params['searchTerm']
         );
-      else this.pokemons = pokemonService.getAll();
+      else if (params['tag']) {
+        this.pokemons = this.pokemonService.getAllPokemonByTag(params['tag']);
+        console.log(this.pokemons);
+      } else this.pokemons = pokemonService.getAll();
     });
   }
 }

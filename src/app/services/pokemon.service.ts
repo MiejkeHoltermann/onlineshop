@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Pokemon } from '../shared/models/pokemon';
-import { sample_Pokemon } from '../../data';
+import { sample_Pokemon, sample_tags } from '../../data';
+import { Tag } from '../shared/models/tag';
 
 @Injectable({
   providedIn: 'root',
@@ -22,5 +23,13 @@ export class PokemonService {
     return (
       this.getAll().find((pokemon) => pokemon.id == pokemonId) ?? new Pokemon()
     );
+  }
+
+  getAllTags(): Tag[] {
+    return sample_tags;
+  }
+
+  getAllPokemonByTag(tag: string): Pokemon[] {
+    return this.getAll().filter((pokemon) => pokemon.tags?.includes(tag));
   }
 }

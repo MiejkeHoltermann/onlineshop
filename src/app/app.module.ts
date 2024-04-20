@@ -9,6 +9,7 @@ import { StarRatingComponent } from './components/partials/star-rating/star-rati
 import { SearchComponent } from './components/partials/search/search.component';
 import { PokemonService } from './services/pokemon.service';
 import { PokemonPageComponent } from './components/pages/pokemon-page/pokemon-page.component';
+import { TagsComponent } from './components/partials/tags/tags.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { PokemonPageComponent } from './components/pages/pokemon-page/pokemon-pa
     StarRatingComponent,
     SearchComponent,
     PokemonPageComponent,
+    TagsComponent,
   ],
   imports: [BrowserModule, AppRoutingModule],
   providers: [PokemonService],
