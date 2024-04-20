@@ -11,12 +11,6 @@
           </div>
         </div>
         <app-star-rating [stars]="pokemon.stars" [size]="2" />
-        <p>Number: {{ pokemon.number }}</p>
-        <p>Type: {{ pokemon.type }}</p>
-        <p>Species: {{ pokemon.species }}</p>
-        <p>Height: {{ pokemon.height }} m</p>
-        <p>Weight: {{ pokemon.weight }} kg</p>
-        <p>Abilities: {{ pokemon.abilities }}</p>
         <p>{{ pokemon.price | currency : "EUR" }}</p>
       </div>
     </a>

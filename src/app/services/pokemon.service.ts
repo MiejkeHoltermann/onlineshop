@@ -17,4 +17,10 @@ export class PokemonService {
       pokemon.name.toLowerCase().includes(searchTerm.toLowerCase())
     );
   }
+
+  getPokemonById(pokemonId: string): Pokemon {
+    return (
+      this.getAll().find((pokemon) => pokemon.id == pokemonId) ?? new Pokemon()
+    );
+  }
 }
