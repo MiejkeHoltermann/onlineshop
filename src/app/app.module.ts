@@ -3,16 +3,24 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { HeaderComponent } from './components/partials/header/header.component';
+import { HomeComponent } from './components/pages/home/home.component';
+import { StarRatingComponent } from './components/partials/star-rating/star-rating.component';
+import { SearchComponent } from './components/partials/search/search.component';
+import { PokemonService } from './services/pokemon.service';
+import { PokemonPageComponent } from './components/pages/pokemon-page/pokemon-page.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HeaderComponent,
+    HomeComponent,
+    StarRatingComponent,
+    SearchComponent,
+    PokemonPageComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+  imports: [BrowserModule, AppRoutingModule],
+  providers: [PokemonService],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

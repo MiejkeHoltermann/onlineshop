@@ -1,0 +1,18 @@
+<app-search></app-search>
+<ul>
+  <li *ngFor="let pokemon of pokemons">
+    <a routerLink="/pokemon/{{ pokemon.id }}">
+      <img [src]="pokemon.imageUrl" [alt]="pokemon.name" />
+      <div class="details">
+        <div class="content">
+          <p class="name">{{ pokemon.name }}</p>
+          <div class="favorite {{ pokemon.favorite ? '' : 'not' }}">
+            <i class="fa-solid fa-heart"></i>
+          </div>
+        </div>
+        <app-star-rating [stars]="pokemon.stars" [size]="2" />
+        <p>{{ pokemon.price | currency : "EUR" }}</p>
+      </div>
+    </a>
+  </li>
+</ul>

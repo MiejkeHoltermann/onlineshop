@@ -1,0 +1,12 @@
+<div>
+  <div class="searchBar">
+    <input
+      #s
+      type="text"
+      placeholder="Search for pokémon"
+      (keyup.enter)="search(s.value)"
+    />
+    <button (click)="search(s.value)">Search</button>
+  </div>
+  <p *ngIf="noResults">No Pokémon found for "{{ searchTerm }}"</p>
+</div>

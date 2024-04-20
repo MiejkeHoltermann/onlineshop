@@ -1,0 +1,50 @@
+@import "@fortawesome/fontawesome-free/css/all.css";
+
+ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  list-style-type: none;
+  padding: 0;
+}
+
+li a {
+  width: 20rem;
+  border: 1px solid #e72929;
+  border-radius: 1rem;
+  margin: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  color: #e72929;
+}
+
+li a:hover {
+  opacity: 0.9;
+  cursor: pointer;
+}
+
+li img {
+  object-fit: contain;
+  height: 14.5rem;
+  padding: 1rem;
+}
+
+.favorite {
+  font-size: 1.2rem;
+}
+
+.favorite.not {
+  color: grey;
+}
+
+.details {
+  padding: 1rem;
+}
+
+.content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
