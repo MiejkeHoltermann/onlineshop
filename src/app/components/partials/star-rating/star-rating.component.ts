@@ -21,7 +21,6 @@ export class StarRatingComponent {
   }
 
   getStarImage(current: number): string {
-    console.log('test');
     const previousHalf = current - 0.5;
     const imageName =
       this.stars >= current
@@ -30,7 +29,6 @@ export class StarRatingComponent {
         ? 'star-half'
         : 'star-empty';
     const imagePath = `/assets/${imageName}.svg`;
-    console.log(imagePath);
     return imagePath;
   }
 }

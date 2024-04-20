@@ -1,4 +1,5 @@
 import { Pokemon } from './app/shared/models/pokemon';
+import { Tag } from './app/shared/models/tag';
 
 export const sample_Pokemon: Pokemon[] = [
   {
@@ -14,7 +15,7 @@ export const sample_Pokemon: Pokemon[] = [
     abilities: ['Static'],
     favorite: true,
     stars: 4.0,
-    tags: ['elektro', 'pokemon', 'pikachu', 'mouse'],
+    tags: ['electro', 'pokemon', 'pikachu', 'mouse'],
   },
   {
     id: '2',
@@ -29,6 +30,16 @@ export const sample_Pokemon: Pokemon[] = [
     abilities: ['Run Away', 'Adaptability'],
     favorite: false,
     stars: 4.6,
-    tags: ['normal', 'pokemon', 'eevee'],
+    tags: ['normal', 'pokemon', 'eevee', 'evolution'],
   },
+];
+
+export const sample_tags: Tag[] = [
+  { name: 'pikachu', count: 1 },
+  { name: 'pokemon', count: 2 },
+  { name: 'eevee', count: 1 },
+  { name: 'electro', count: 1 },
+  { name: 'normal', count: 1 },
+  { name: 'evolution', count: 1 },
+  { name: 'mouse', count: 1 },
 ];

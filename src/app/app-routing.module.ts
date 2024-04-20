@@ -6,6 +6,7 @@ import { PokemonPageComponent } from './components/pages/pokemon-page/pokemon-pa
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'search/:searchTerm', component: HomeComponent },
+  { path: 'tag/:tag', component: HomeComponent },
   { path: 'pokemon/:id', component: PokemonPageComponent },
 ];
 
