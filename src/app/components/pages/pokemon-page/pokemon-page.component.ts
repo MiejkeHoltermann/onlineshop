@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { PokemonService } from '../../../services/pokemon.service';
 import { Pokemon } from '../../../shared/models/pokemon';
+import { CartService } from '../../../services/cart.service';
 
 @Component({
   selector: 'app-pokemon-page',
@@ -11,11 +12,21 @@ import { Pokemon } from '../../../shared/models/pokemon';
 export class PokemonPageComponent {
   pokemon!: Pokemon;
 
-  constructor(activatedRoute: ActivatedRoute, pokemonService: PokemonService) {
+  constructor(
+    activatedRoute: ActivatedRoute,
+    pokemonService: PokemonService,
+    private cartService: CartService,
+    private router: Router
+  ) {
     activatedRoute.params.subscribe((params) => {
       if (params['id']) {
         this.pokemon = pokemonService.getPokemonById(params['id']);
       }
     });
+  }
+
+  addToCart() {
+    this.cartService.addToCart(this.pokemon);
+    this.router.navigateByUrl('/cart-page');
   }
 }
