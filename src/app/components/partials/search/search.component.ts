@@ -10,28 +10,14 @@ import { PokemonService } from '../../../services/pokemon.service';
 })
 export class SearchComponent {
   searchTerm = '';
-  foundPokemons: Pokemon[] = [];
-  noResults = false;
 
-  constructor(
-    activatedRoute: ActivatedRoute,
-    private router: Router,
-    private pokemonService: PokemonService
-  ) {
+  constructor(activatedRoute: ActivatedRoute, private router: Router) {
     activatedRoute.params.subscribe((params) => {
       if (params['searchTerm']) this.searchTerm = params['searchTerm'];
-      this.searchPokemons();
     });
   }
 
   search(term: string): void {
     if (term) this.router.navigateByUrl('/search/' + term);
-  }
-
-  searchPokemons(): void {
-    this.foundPokemons = this.pokemonService.getAllBySearchTerm(
-      this.searchTerm
-    );
-    this.noResults = this.foundPokemons.length === 0;
   }
 }
